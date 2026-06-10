@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOODLIFE STUDIO — About</title>
+  <meta name="description" content="Paris-based creative production studio founded in 2018. Video, photo, events and campaigns for culture-defining brands.">
+  <meta property="og:title" content="HOODLIFE STUDIO — About">
+  <meta property="og:description" content="Paris-based creative production studio founded in 2018. Video, photo, events and campaigns for culture-defining brands.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hoodlifestudio.com/about.html">
+  <meta property="og:image" content="https://hoodlifestudio.com/assets/og-image.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+  <!-- Fonts self-hosted — @font-face dans global.css -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/about.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="overflow-hidden">
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader__line"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor">
+    <span class="cursor__label"></span>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/" class="nav__logo" aria-label="Hoodlife Studio"><span class="d-first">H</span><span class="d-rest">oodlife</span> <span class="d-first">S</span><span class="d-rest">tudio</span></a>
+    <div class="nav__right">
+      <div class="nav__meta">
+        <span class="nav__clock" id="navClock">00:00</span>
+        <span class="nav__location">Paris, France</span>
+      </div>
+      <a href="contact.html" class="nav__cta" data-cursor="Contact">Let's Talk</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Fullscreen Menu -->
+  <div class="menu">
+    <div class="menu__links">
+      <a href="index.html" class="menu__link"><span class="menu__link-num">01</span><span class="menu__link-text" data-display-text>Home</span></a>
+      <a href="work.html" class="menu__link"><span class="menu__link-num">02</span><span class="menu__link-text" data-display-text>Work</span></a>
+      <a href="services.html" class="menu__link"><span class="menu__link-num">03</span><span class="menu__link-text" data-display-text>Services</span></a>
+      <a href="about.html" class="menu__link"><span class="menu__link-num">04</span><span class="menu__link-text" data-display-text>About</span></a>
+      <a href="contact.html" class="menu__link"><span class="menu__link-num">05</span><span class="menu__link-text" data-display-text>Contact</span></a>
+    </div>
+    <div class="menu__footer">
+      <div class="menu__socials"><a href="https://instagram.com/hoodlife.fr" target="_blank" rel="noopener" data-cursor="Open">Instagram</a></div>
+      <div class="menu__email">contact@hoodlifestudio.com</div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ═══════ SECTION 1 — Hero Statement ═══════ -->
+    <section class="abt-hero">
+      <div class="abt-hero__content" data-reveal>
+        <h1 class="t-display t-display--hero abt-hero__title">ONE VISION. NO COMPROMISE.</h1>
+      </div>
+    </section>
+
+
+    <!-- ═══════ SECTION 2 — Who We Are ═══════ -->
+    <section class="abt-who page-margin">
+      <div class="abt-who__text" data-reveal>
+        <p>Hoodlife Studio is a Paris-based creative production studio founded in 2018. We produce video, photo, events and campaigns for the brands, labels and artists defining contemporary culture.</p>
+        <p>We started as a cultural archive — documenting what others overlooked. That eye became our method. Every project we take on is selected, not solicited. Every frame we deliver carries the same standard: cinematic quality, cultural relevance, zero compromise on creative direction.</p>
+        <p>We're not a full-service agency. We don't do everything for everyone. We do what we're built for — and we do it at a level most can't match.</p>
+      </div>
+    </section>
+
+
+    <!-- ═══════ SECTION 3 — Numbers ═══════ -->
+    <section class="abt-numbers page-margin">
+      <div class="abt-numbers__row" data-reveal-stagger>
+        <div class="abt-num">
+          <span class="abt-num__value t-display t-display--lg">2018</span>
+          <span class="abt-num__label t-mono t-mono--sm">Founded</span>
+        </div>
+        <div class="abt-num">
+          <span class="abt-num__value t-display t-display--lg">200+</span>
+          <span class="abt-num__label t-mono t-mono--sm">Projects delivered</span>
+        </div>
+        <div class="abt-num">
+          <span class="abt-num__value t-display t-display--lg">20+</span>
+          <span class="abt-num__label t-mono t-mono--sm">Clients</span>
+        </div>
+        <div class="abt-num">
+          <span class="abt-num__value t-display t-display--lg">8</span>
+          <span class="abt-num__label t-mono t-mono--sm">Services</span>
+        </div>
+        <div class="abt-num">
+          <span class="abt-num__value t-display t-display--lg">Paris</span>
+          <span class="abt-num__label t-mono t-mono--sm">Based</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════ SECTION 4 — Team ═══════ -->
+    <section class="abt-team page-margin">
+      <h2 class="t-heading t-heading--sm abt-team__label" data-reveal>The Team</h2>
+
+      <div class="abt-team__members" data-reveal-stagger>
+        <div class="abt-member">
+          <h3 class="abt-member__name t-display t-display--md">Nyjah</h3>
+          <span class="abt-member__role t-mono t-mono--sm">CEO & Creative Director</span>
+          <p class="abt-member__desc">Vision, art direction, and every creative decision.</p>
+        </div>
+        <div class="abt-member">
+          <h3 class="abt-member__name t-display t-display--md">Tidiane</h3>
+          <span class="abt-member__role t-mono t-mono--sm">COO</span>
+          <p class="abt-member__desc">Operations, execution, and client delivery.</p>
+        </div>
+        <div class="abt-member">
+          <h3 class="abt-member__name t-display t-display--md">Brandon</h3>
+          <span class="abt-member__role t-mono t-mono--sm">Reporter & Content Creator</span>
+          <p class="abt-member__desc">On the ground, in the field, behind the lens.</p>
+        </div>
+      </div>
+
+      <p class="abt-team__network" data-reveal>Supported by a network of cinematographers, photographers, editors, DJs and event producers — activated project by project.</p>
+    </section>
+
+
+    <!-- ═══════ SECTION 5 — Clients ═══════ -->
+    <section class="abt-clients page-margin">
+      <h2 class="t-heading t-heading--sm abt-clients__label" data-reveal>They Trusted Us</h2>
+      <div class="abt-clients__grid" data-reveal-stagger>
+        <div class="abt-clients__logo"><img src="assets/logos/universal-music-fr.svg" loading="lazy" alt="Universal Music"></div>
+        <div class="abt-clients__logo"><img src="assets/logos/warner.jpeg" loading="lazy" width="400" height="400" alt="Warner Music"></div>
+        <div class="abt-clients__logo"><img src="assets/logos/true-religion.svg" loading="lazy" alt="True Religion"></div>
+        <div class="abt-clients__logo"><img src="assets/logos/wanderlust.png" loading="lazy" width="400" height="400" alt="Wanderlust"></div>
+        <div class="abt-clients__logo"><img src="assets/logos/ad26-logo-white.png" loading="lazy" width="6706" height="2378" alt="Les Ardentes"></div>
+        <div class="abt-clients__logo"><img src="assets/logos/truth-records.jpg" loading="lazy" width="958" height="958" alt="Truth Records"></div>
+        <div class="abt-clients__logo"><img src="assets/logos/maison-guava.png" loading="lazy" width="200" height="35" alt="Maison Guava"></div>
+        <div class="abt-clients__logo"><img src="assets/logos/rec118.png" loading="lazy" width="1159" height="784" alt="Rec.118"></div>
+        <div class="abt-clients__logo"><img src="assets/logos/fichier-11.png" loading="lazy" width="1366" height="494" alt="Deflower"></div>
+      </div>
+    </section>
+
+
+    <!-- ═══════ SECTION 6 — CTA ═══════ -->
+    <section class="abt-cta page-margin">
+      <div class="abt-cta__content" data-reveal>
+        <a href="contact.html" class="cta" data-cursor="Contact">Let's Talk <span class="cta__arrow">&rarr;</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer abt-footer">
+    <div class="footer__inner">
+      <div class="footer__left">
+        <div class="footer__address">48 rue de Ponthieu, 75008 Paris</div>
+        <nav class="footer__nav"><a href="index.html">Home</a><a href="work.html">Work</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+      </div>
+      <div class="footer__right">
+        <div class="footer__socials"><a href="https://instagram.com/hoodlife.fr" target="_blank" rel="noopener" data-cursor="Open">Instagram</a></div>
+        <div class="footer__legal">&copy; 2026 Hoodlife Studio. All rights reserved. <a href="mentions-legales.html">Legal</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

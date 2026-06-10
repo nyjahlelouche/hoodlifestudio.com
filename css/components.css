@@ -1,0 +1,464 @@
+/* ══════════════════════════════════════════════════════════════
+   HOODLIFE STUDIO — components.css
+   Navigation, Fullscreen Menu, Footer, Cursor, Preloader, CTA
+   ══════════════════════════════════════════════════════════════ */
+
+
+/* ── Navigation Bar ───────────────────────────────────────── */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 24px var(--margin-page);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform var(--dur-normal) var(--ease-out),
+              background-color var(--dur-normal) var(--ease-out);
+}
+
+/* Logo — PP Editorial New (first letter italic via .d-first/.d-rest) */
+.nav__logo {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  color: var(--color-text);
+  line-height: 1;
+  white-space: nowrap;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.nav__logo:hover {
+  opacity: 0.6;
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Paris time + location */
+.nav__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav__clock,
+.nav__location {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+}
+
+.nav__cta {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text);
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.nav__cta:hover {
+  opacity: 0.6;
+}
+
+
+/* ── Burger Button ────────────────────────────────────────── */
+
+.nav__burger {
+  width: 32px;
+  height: 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.nav__burger span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-text);
+  transform-origin: center;
+  transition: transform var(--dur-normal) var(--ease-out),
+              opacity var(--dur-fast) var(--ease-out);
+}
+
+/* Burger → X transition */
+.nav__burger--active span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.nav__burger--active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__burger--active span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+
+/* ── Fullscreen Menu — opens BELOW nav ────────────────────── */
+
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  visibility: hidden;
+  pointer-events: none;
+  clip-path: inset(0 0 100% 0);
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu__link {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  color: var(--color-text);
+  opacity: 0;
+}
+
+.menu__link-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+  min-width: 28px;
+}
+
+.menu__link-text {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  font-size: clamp(48px, 7vw, 80px);
+  line-height: 1.15;
+  display: inline-block;
+}
+
+/* Dim siblings on hover — using color to avoid GSAP opacity conflict */
+.menu__links:hover .menu__link {
+  opacity: 0.25 !important;
+  transition: opacity 0.3s var(--ease-out);
+}
+
+.menu__links:hover .menu__link:hover {
+  opacity: 1 !important;
+}
+
+.menu__footer {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: var(--margin-page);
+  right: var(--margin-page);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  opacity: 0;
+}
+
+.menu__socials {
+  display: flex;
+  gap: 24px;
+}
+
+.menu__socials a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.menu__socials a:hover {
+  color: var(--color-text);
+}
+
+.menu__email {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
+
+/* ── Footer ───────────────────────────────────────────────── */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 46;
+  background: transparent;
+  padding: var(--space-lg) var(--margin-page) var(--space-md);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-lg);
+}
+
+.footer__left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer__logo-img {
+  height: 24px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.footer__address {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 28px;
+}
+
+.footer__nav a {
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footer__nav a:hover {
+  color: var(--color-text);
+}
+
+.footer__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-sm);
+}
+
+.footer__socials {
+  display: flex;
+  gap: 28px;
+}
+
+.footer__socials a {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footer__socials a:hover {
+  color: var(--color-text);
+}
+
+.footer__legal {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.05em;
+}
+
+.footer__legal a {
+  color: var(--color-text-tertiary);
+  transition: color var(--dur-fast);
+}
+
+.footer__legal a:hover {
+  color: var(--color-text-secondary);
+}
+
+
+/* ── Custom Cursor ────────────────────────────────────────── */
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--color-text);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width var(--dur-fast) var(--ease-out),
+              height var(--dur-fast) var(--ease-out),
+              background-color var(--dur-fast) var(--ease-out),
+              opacity var(--dur-fast) var(--ease-out);
+}
+
+.cursor__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.cursor--hover {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(237, 237, 237, 0.06);
+}
+
+.cursor--hover .cursor__label {
+  opacity: 1;
+}
+
+.cursor--hidden {
+  opacity: 0;
+}
+
+
+/* ── Preloader — TV turn-on ───────────────────────────────── */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader__line {
+  width: 100%;
+  height: 2px;
+  background: var(--color-text);
+  opacity: 0;
+}
+
+
+/* ── CTA Link ─────────────────────────────────────────────── */
+
+.cta {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.cta::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-text);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--dur-normal) var(--ease-out);
+}
+
+.cta:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.cta__arrow {
+  display: inline-block;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.cta:hover .cta__arrow {
+  transform: translateX(4px);
+}
+
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 20px var(--margin-page);
+  }
+
+  .nav__meta,
+  .nav__cta {
+    display: none;
+  }
+
+  .menu__footer {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .footer__right {
+    align-items: flex-start;
+  }
+
+  .footer__nav {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .cursor {
+    display: none;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  a, button {
+    cursor: pointer;
+  }
+}

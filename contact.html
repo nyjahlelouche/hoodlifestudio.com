@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOODLIFE STUDIO — Contact</title>
+  <meta name="description" content="Get in touch with Hoodlife Studio. Paris-based creative production studio.">
+  <meta property="og:title" content="HOODLIFE STUDIO — Contact">
+  <meta property="og:description" content="Get in touch with Hoodlife Studio. Paris-based creative production studio.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hoodlifestudio.com/contact.html">
+  <meta property="og:image" content="https://hoodlifestudio.com/assets/og-image.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+  <!-- Fonts self-hosted — @font-face dans global.css -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/contact.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="overflow-hidden">
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader__line"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor">
+    <span class="cursor__label"></span>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/" class="nav__logo" aria-label="Hoodlife Studio"><span class="d-first">H</span><span class="d-rest">oodlife</span> <span class="d-first">S</span><span class="d-rest">tudio</span></a>
+    <div class="nav__right">
+      <div class="nav__meta">
+        <span class="nav__clock" id="navClock">00:00</span>
+        <span class="nav__location">Paris, France</span>
+      </div>
+      <a href="contact.html" class="nav__cta" data-cursor="Contact">Let's Talk</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Fullscreen Menu -->
+  <div class="menu">
+    <div class="menu__links">
+      <a href="index.html" class="menu__link"><span class="menu__link-num">01</span><span class="menu__link-text" data-display-text>Home</span></a>
+      <a href="work.html" class="menu__link"><span class="menu__link-num">02</span><span class="menu__link-text" data-display-text>Work</span></a>
+      <a href="services.html" class="menu__link"><span class="menu__link-num">03</span><span class="menu__link-text" data-display-text>Services</span></a>
+      <a href="about.html" class="menu__link"><span class="menu__link-num">04</span><span class="menu__link-text" data-display-text>About</span></a>
+      <a href="contact.html" class="menu__link"><span class="menu__link-num">05</span><span class="menu__link-text" data-display-text>Contact</span></a>
+    </div>
+    <div class="menu__footer">
+      <div class="menu__socials"><a href="https://instagram.com/hoodlife.fr" target="_blank" rel="noopener" data-cursor="Open">Instagram</a></div>
+      <div class="menu__email">contact@hoodlifestudio.com</div>
+    </div>
+  </div>
+
+  <main>
+    <section class="ct page-margin">
+      <div class="ct__content" data-reveal>
+        <h1 class="t-display t-display--hero ct__title" data-display-text>Let's Talk.</h1>
+        <p class="t-body t-body--lg ct__sub">We select our projects. If you're here, we should talk.</p>
+
+        <div class="ct__info">
+          <div class="ct__row">
+            <span class="ct__label t-mono t-mono--sm">Email</span>
+            <a href="mailto:contact@hoodlifestudio.com" class="ct__value" data-cursor="Email">contact@hoodlifestudio.com</a>
+          </div>
+          <div class="ct__row">
+            <span class="ct__label t-mono t-mono--sm">Address</span>
+            <span class="ct__value">48 rue de Ponthieu, 75008 Paris</span>
+          </div>
+          <div class="ct__row">
+            <span class="ct__label t-mono t-mono--sm">Socials</span>
+            <div class="ct__socials">
+              <a href="https://instagram.com/hoodlife.fr" target="_blank" rel="noopener" class="ct__value" data-cursor="Open">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer ct-footer">
+    <div class="footer__inner">
+      <div class="footer__left">
+        <div class="footer__address">48 rue de Ponthieu, 75008 Paris</div>
+        <nav class="footer__nav"><a href="index.html">Home</a><a href="work.html">Work</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+      </div>
+      <div class="footer__right">
+        <div class="footer__socials"><a href="https://instagram.com/hoodlife.fr" target="_blank" rel="noopener" data-cursor="Open">Instagram</a></div>
+        <div class="footer__legal">&copy; 2026 Hoodlife Studio. All rights reserved. <a href="mentions-legales.html">Legal</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

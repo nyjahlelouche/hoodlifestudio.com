@@ -1,0 +1,16 @@
+# Assets lourds — non versionnés (2 GB images, 239 MB vidéos)
+assets/images/
+assets/videos/
+
+# Fichiers de travail — ne jamais déployer
+_brief-phase*.html
+
+# Système
+Thumbs.db
+.DS_Store
+node_modules/
+
+assets/fonts/
+.env
+*.mp4
+*.mov

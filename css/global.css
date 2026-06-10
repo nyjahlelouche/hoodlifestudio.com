@@ -1,0 +1,447 @@
+/* ══════════════════════════════════════════════════════════════
+   HOODLIFE STUDIO — global.css
+   Variables, Reset, Typography System, Image Treatment, Utilities
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── @font-face — PP Editorial New ────────────────────────── */
+
+@font-face {
+  font-family: 'PP Editorial New';
+  src: url('../assets/fonts/PPEditorialNew/PPEditorialNew-Regular.woff2') format('woff2'),
+       url('../assets/fonts/PPEditorialNew/PPEditorialNew-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Editorial New';
+  src: url('../assets/fonts/PPEditorialNew/PPEditorialNew-Italic.woff2') format('woff2'),
+       url('../assets/fonts/PPEditorialNew/PPEditorialNew-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Editorial New';
+  src: url('../assets/fonts/PPEditorialNew/PPEditorialNew-Bold.woff2') format('woff2'),
+       url('../assets/fonts/PPEditorialNew/PPEditorialNew-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Editorial New';
+  src: url('../assets/fonts/PPEditorialNew/PPEditorialNew-BoldItalic.woff2') format('woff2'),
+       url('../assets/fonts/PPEditorialNew/PPEditorialNew-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+/* ── @font-face — PP Monument Extended ───────────────────── */
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url('../assets/fonts/PPMonumentExtended/PPMonumentExtended-Regular.woff2') format('woff2'),
+       url('../assets/fonts/PPMonumentExtended/PPMonumentExtended-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url('../assets/fonts/PPMonumentExtended/PPMonumentExtended-Bold.woff2') format('woff2'),
+       url('../assets/fonts/PPMonumentExtended/PPMonumentExtended-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Monument Extended';
+  src: url('../assets/fonts/PPMonumentExtended/PPMonumentExtended-Black.woff2') format('woff2'),
+       url('../assets/fonts/PPMonumentExtended/PPMonumentExtended-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ── @font-face — PP Monument (largeur normale, non-Extended) ──
+   Remplace ABC Monument Grotesk Trial (fichiers d'essai non licenciés) */
+
+@font-face {
+  font-family: 'PP Monument';
+  src: url('../assets/fonts/PPMonumentExtended/PPMonumentNormal-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Monument';
+  src: url('../assets/fonts/PPMonumentExtended/PPMonumentNormal-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ── @font-face — Space Mono (self-hosted, ex-Google Fonts) ── */
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('../assets/fonts/SpaceMono/SpaceMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('../assets/fonts/SpaceMono/SpaceMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ── Custom Properties ────────────────────────────────────── */
+
+:root {
+  /* Palette — Phase 2 DA */
+  --color-bg: #0A0B0C;
+  --color-text: #EDEDED;
+  --color-text-secondary: #888888;
+  --color-text-tertiary: #555555;
+  --color-border: #1A1A1A;
+  --color-border-light: #333333;
+
+  /* Typography */
+  --font-display: 'PP Editorial New', serif;              /* statements, taglines, logo, project names */
+  --font-heading: 'PP Monument Extended', sans-serif;     /* massive display titles — weight 900 (Black) */
+  --font-label: 'PP Monument', sans-serif;                /* structural labels, nav, CTAs — Bold */
+  --font-ui: 'PP Monument', sans-serif;                   /* body text, descriptions — Regular */
+  --font-mono: 'Space Mono', monospace;                   /* timestamps, separators, technical */
+
+  /* Spacing scale */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 60px;
+  --space-2xl: 80px;
+  --space-3xl: 120px;
+
+  /* Page margins */
+  --margin-page: 60px;
+
+  /* Timing */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.3s;
+  --dur-normal: 0.6s;
+  --dur-slow: 0.8s;
+}
+
+
+/* ── Reset ────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: none;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+
+/* ── Typography — Display (PP Editorial New Italic) ──────── */
+/* Voice, elegance — statements, taglines, sub-titles */
+
+.t-display {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.0;
+  color: var(--color-text);
+}
+
+.t-display--hero {
+  font-size: clamp(48px, 8vw, 120px);
+  letter-spacing: -0.02em;
+}
+
+.t-display--lg {
+  font-size: clamp(36px, 6vw, 80px);
+  letter-spacing: -0.02em;
+}
+
+.t-display--md {
+  font-size: clamp(28px, 4vw, 56px);
+  letter-spacing: -0.01em;
+}
+
+
+/* ── Typography — Heading (PP Monument Extended Regular — structural labels) */
+/* SELECTED WORK, HOW WE WORK, THE TEAM, VIEW ALL PROJECTS, etc. */
+
+.t-heading {
+  font-family: var(--font-label);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.15;
+  color: var(--color-text);
+}
+
+.t-heading--lg {
+  font-size: clamp(20px, 2.5vw, 24px);
+}
+
+.t-heading--md {
+  font-size: clamp(16px, 2vw, 18px);
+}
+
+.t-heading--sm {
+  font-size: clamp(13px, 1.5vw, 14px);
+}
+
+.t-body {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.t-body--lg {
+  font-size: 18px;
+}
+
+.t-body--md {
+  font-size: 16px;
+}
+
+.t-body--sm {
+  font-size: 14px;
+}
+
+
+/* ── Typography — Mono (Space Mono) ───────────────────────── */
+
+.t-mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.t-mono--lg {
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.t-mono--md {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.t-mono--sm {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+
+/* ── Hero text split helpers ──────────────────────────────── */
+
+.word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.word-wrap .word {
+  display: inline-block;
+}
+
+
+/* ── Mixed Display Typography ─────────────────────────────── */
+/* Logo: full PP Editorial New italic (like jasonbergh.com) */
+
+.d-word {
+  display: inline-block;
+}
+
+.d-first {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.d-rest {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* ── Image & Video Treatment ──────────────────────────────── */
+
+img,
+video {
+  filter: saturate(0.85) contrast(1.2);
+}
+
+.has-grain {
+  position: relative;
+  overflow: hidden;
+}
+
+.has-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+
+/* ── Layout ───────────────────────────────────────────────── */
+
+.page-margin {
+  padding-left: var(--margin-page);
+  padding-right: var(--margin-page);
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+.section--auto {
+  min-height: auto;
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(-1 * var(--margin-page));
+}
+
+
+/* ── Utilities ────────────────────────────────────────────── */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* GSAP scroll reveal targets — hidden by default, revealed by JS */
+[data-reveal],
+[data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Archive reference element */
+.archive-ref {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-tertiary);
+  opacity: 0.3;
+}
+
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  :root {
+    --margin-page: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --margin-page: 20px;
+  }
+
+  .section {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .t-body--lg {
+    font-size: 16px;
+  }
+}

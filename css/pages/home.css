@@ -1,0 +1,334 @@
+/* ══════════════════════════════════════════════════════════════
+   HOODLIFE STUDIO — pages/home.css
+   Home — Hero + Selected Work (100vh fixed composition)
+   ══════════════════════════════════════════════════════════════ */
+
+
+/* ── Hero ─────────────────────────────────────────────────── */
+
+.home-hero {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  z-index: 0;
+  scroll-snap-align: start;
+}
+
+.home-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.home-hero__bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(10, 11, 12, 0.4);
+}
+
+.home-hero__content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: var(--space-3xl);
+}
+
+.home-hero__tagline {
+  max-width: 880px;
+}
+
+.home-hero__sub {
+  margin-top: var(--space-md);
+  max-width: 480px;
+  opacity: 0;
+}
+
+.home-hero__scroll {
+  position: absolute;
+  bottom: var(--space-lg);
+  right: var(--margin-page);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+}
+
+.home-hero__scroll span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-tertiary);
+  writing-mode: vertical-rl;
+}
+
+.home-hero__scroll::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: var(--color-text-tertiary);
+  opacity: 0.4;
+}
+
+.home-hero__scroll.is-visible {
+  animation: scrollBounce 2.5s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+.home-hero__ref {
+  position: absolute;
+  top: var(--space-3xl);
+  right: var(--margin-page);
+  z-index: 2;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   Selected Work — 100vh fixed composition
+   Left: project names (roulette)
+   Right: large preview image/video
+   ══════════════════════════════════════════════════════════════ */
+
+.home-work {
+  position: relative;
+  z-index: 10;
+  background-color: #0A0B0C;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+
+/* ── Header — pinned top ──────────────────────────────────── */
+
+.home-work__header {
+  position: absolute;
+  top: 90px;
+  left: var(--margin-page);
+  right: var(--margin-page);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 45;
+}
+
+
+/* ── Level 1: Fullscreen BG ───────────────────────────────── */
+
+.home-work__bgs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-work__bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+}
+
+.home-work__bg.is-active {
+  opacity: 1;
+}
+
+.home-work__bg video,
+.home-work__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-work__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 11, 12, 0.75);
+}
+
+
+/* ── Level 2: Preview — large, center-right ───────────────── */
+
+.home-work__preview {
+  position: absolute;
+  top: 50%;
+  left: 42%;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out);
+}
+
+.home-work__preview.is-visible {
+  opacity: 1;
+}
+
+.home-work__preview-frame {
+  width: 38vw;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.home-work__preview-item {
+  position: absolute;
+  inset: 0;
+  transform: translateY(100%);
+}
+
+.home-work__preview-item video,
+.home-work__preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-work__crt-flash {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.home-work__preview-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding: 0 4px;
+}
+
+.home-work__preview-industry,
+.home-work__preview-services {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.home-work__preview-services {
+  text-align: right;
+}
+
+
+/* ── Project rows — left side, vertically centered ────────── */
+
+.home-work__rows {
+  position: absolute;
+  left: var(--margin-page);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 38%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.home-work__track {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  width: 100%;
+}
+
+.home-work__row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 24px 0;
+  color: var(--color-text);
+  transform-origin: left center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.home-work__row-num {
+  color: var(--color-text-tertiary);
+}
+
+.home-work__row-name {
+  font-size: clamp(36px, 4.5vw, 72px);
+  line-height: 1.1;
+}
+
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .home-work__preview-frame {
+    width: 45vw;
+    height: 55vh;
+  }
+
+  .home-work__rows {
+    width: 42%;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero__content {
+    padding-bottom: var(--space-2xl);
+  }
+
+  .home-hero__scroll,
+  .home-hero__ref {
+    display: none;
+  }
+
+  .home-work {
+    height: auto;
+    min-height: 100vh;
+    padding: var(--space-2xl) 0;
+  }
+
+  .home-work__header {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    padding: 0 var(--margin-page);
+    margin-bottom: var(--space-lg);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .home-work__rows {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 0 var(--margin-page);
+  }
+
+  .home-work__row-name {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+
+  .home-work__preview,
+  .home-work__bgs {
+    display: none;
+  }
+}

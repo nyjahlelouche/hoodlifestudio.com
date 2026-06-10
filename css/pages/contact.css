@@ -1,0 +1,76 @@
+/* ══════════════════════════════════════════════════════════════
+   HOODLIFE STUDIO — pages/contact.css
+   Single fullscreen section — ultra minimal
+   ══════════════════════════════════════════════════════════════ */
+
+.ct {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: var(--space-3xl);
+}
+
+.ct__content {
+  max-width: 700px;
+}
+
+.ct__title {
+  margin-bottom: var(--space-md);
+}
+
+.ct__sub {
+  margin-bottom: var(--space-xl);
+}
+
+.ct__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.ct__row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ct__label {
+  color: var(--color-text-tertiary);
+}
+
+.ct__value {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--color-text);
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+a.ct__value:hover {
+  opacity: 0.6;
+}
+
+.ct__socials {
+  display: flex;
+  gap: var(--space-md);
+}
+
+/* Footer */
+.ct-footer {
+  position: relative;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .ct {
+    padding-top: 100px;
+    min-height: calc(100vh - 80px);
+  }
+
+  .ct__value {
+    font-size: 16px;
+  }
+}
